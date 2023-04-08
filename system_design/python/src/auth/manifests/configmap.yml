@@ -1,5 +1,5 @@
-apiVersion: api/v1
-kind: configMap
+apiVersion: v1
+kind: ConfigMap
 metadata:
   name: auth-configmap
 data:
