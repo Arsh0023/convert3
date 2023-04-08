@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/58957474/how-to-install-flask-mysqldb-for-python - for installing flask db 3rd 
+
+JWT explanation at 00:31
+
+curl -sS https://webinstall.dev/k9s | bash - to install k9s through Webi(Easy to remember URLs)
+
+manifests explanation at 01:15
