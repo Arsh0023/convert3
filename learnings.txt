@@ -1,7 +1,31 @@
+Link - https://www.youtube.com/watch?v=hmkF77F9TLw&t=4698s
+
 https://stackoverflow.com/questions/58957474/how-to-install-flask-mysqldb-for-python - for installing flask db 3rd 
 
 JWT explanation at 00:31
 
 curl -sS https://webinstall.dev/k9s | bash - to install k9s through Webi(Easy to remember URLs)
 
-manifests explanation at 01:15
+EXPLANATION: manifests explanation(brief) at 01:15
+
+steps on starting the cluster - 
+1. minikube start
+2. Enter k9s and then change the namespace to all by hitting 0.
+
+Services type:-
+The Service "auth" is invalid: spec.type: Unsupported value: "clusterIP": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
+
+Now I had a lot errors as the first letter after the type will always be Capital. Although it was very easy to trace the
+errors from the error messages.
+
+### Pushing to Docker Repo###
+docker tag 3db3dfd66a98 arsh0023/auth:latest
+docker push arsh0023/auth:latest    #One doubt I have here is that can't I push some other name and tag from local to some other name and tag to the remote docker hub
+
+EXPLANATION: Kubernetes at 1:19
+
+EXPLANATION: Gateway code at 1:35
+
+EXPLANATION: Architecture flow at 1:45
+
+LeftAt - 2:03
