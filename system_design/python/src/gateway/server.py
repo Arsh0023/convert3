@@ -31,3 +31,29 @@ def upload():
         pass
     else:
         return err
+    
+@server.route("/upload", methods=["POST"])
+def upload():
+    access, err = validate.token(request)
+
+    access = json.loads(access)
+
+    if access["admin"]:
+        if len(request.files) != 1:
+            return "Exactly One File required", 400
+        
+        for _, f in request.files.items():
+            err = util.upload(f, fs, channel, access) #channel here is for rabbitMQ
+
+            if err:
+                return err
+        return "success!", 200
+    else:
+        return "Not authorized", 401
+    
+@server.route("/download", methods=["POST"])
+def download():
+    pass
+
+if __name__ == "__main__":
+    server.run(host="0.0.0.0", port=8080)

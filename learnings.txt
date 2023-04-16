@@ -28,4 +28,9 @@ EXPLANATION: Gateway code at 1:35
 
 EXPLANATION: Architecture flow at 1:45
 
-LeftAt - 2:03
+EXPLANATION: BASIC CODE OVERVIEW at 2:03
+
+EXPLANATION: rabbitmq at 2:17
+
+EXPLANATION: Ingress at 2:33
+LeftAt - 2:39
