@@ -33,4 +33,28 @@ EXPLANATION: BASIC CODE OVERVIEW at 2:03
 EXPLANATION: rabbitmq at 2:17
 
 EXPLANATION: Ingress at 2:33
-LeftAt - 2:39
+
+minikube addons enable ingress #command to installa addons
+
+EXPLANATION: statefullset at 2:40 We won't be creating a Deployment for rabbitmq service as we our messages to stay intact and even if the pod crashes and thus we will go with a deployment set
+
+EXPLANATION: ingress use 2:55 now as we want to access the http port of rabbitmq from outside the cluster through a webbrowser we need to access it from outside the cluster AND FOR THAT WE NEED TO CREATE AN INGRESS NETWORK
+
+kubectl describe pods <pod-name> #to know about what happened to the pod
+
+The persistent volume clain is immutable after creation and we need to remove the that. In the tutorial we are removing the whole of deployments and the command used for the same is kubectl delete -f ./
+
+CHANGED: My cluster started routing urls by changing the /etc/hosts entry to ip shown in the kubectl get ingress. Apparently this is some ip that minikube assigns to its vm that it uses to launch VMs top on which our kubernetes is running.
+minikube node list -- use this command to get the ip. This is the minikube machine that is running all of kubernetes
+
+NOTE: We were resolving the rabbitmq by service name in gateway service and when we restarted the
+rabbitMQ, gateway service was still resolving to the old rabbitMQ pods and thats why we got an internal server error.
+
+NOTE: Now how the download works is there is a function in flask called send_file, we fetched the file
+directly from mongo and returned it using the function with giving it a name.
+
+NOTE: How we generally troubleshoot is we scale down the pods all to 1. So we can track actually where
+the error is and then we restart all the pods just to be sure it is not picking some old resolution of the service (because kubernetes some times tends to do so)
+
+LeftAt - Completed!
+*notification deployment is left and Gateway service was not starting ContainerConfig some error like this.
